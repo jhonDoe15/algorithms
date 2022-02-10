@@ -37,6 +37,14 @@ calculatedResults[0] = calculatedResults[1] = 1;
 //       thats why when under the 30'th or so fibonacci number we'll rather do all the calculations to ramin within
 //       the cpu lower level cache instead of using the higher levels or even the RAM which would be much slower than 
 //       those small caches
+//
+//       when running the algorithm we get a Complexity of O(n) because we only need to calculate each n'th fibonacci
+//       number once. if we use the dynamically proccessing function it will run mostly in 2-5 miliseconds, while fibRegular
+//       would do so myabe even a bit better until n=28 (as roughly checked on my local machine).
+//
+//       we get value accuracy of upto 16 digits because of Javascript's variable allocation
+//
+
 function fibDynamic(n) {
     if (calculatedResults[n] !== 0)
         return calculatedResults[n];
